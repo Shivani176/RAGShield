@@ -1,4 +1,4 @@
-# 🛡️ Prompt Injection Defense for an Agentic RAG Research Synthesizer
+# 🛡️ RAGShield - Prompt Injection Defense for an Agentic RAG Research Synthesizer
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
@@ -274,4 +274,4 @@ python cleanup_poison.py
 **Shivani Kalal**  
 MS Computer Science — University of Mississippi  
 CSCI 491: Advanced Topics in Security and Privacy of LLMs  
-[LinkedIn](https://linkedin.com/in/shivani-kalal) · [GitHub](https://github.com/shivani-kalal) · skalal@go.olemiss.edu
+[LinkedIn](https://linkedin.com/in/shivani-kalal) · [GitHub](https://github.com/shivani-kalal) · shivani.rk06@gmail.com
