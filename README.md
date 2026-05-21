@@ -26,7 +26,6 @@ The system ingests paper abstracts from arXiv, generates citation-enforced liter
 - Implement and evaluate two prompt-level defenses reducing ASR to 0%
 - Measure security-utility tradeoffs via a 3-condition ablation study
 
-> 📄 **Full paper:** [CS 491 Final Report — Shivani Kalal, University of Mississippi](./CS_491_Final_Report.pdf)
 
 ---
 
@@ -202,15 +201,37 @@ Transformer Self-Attention Mechanisms: A Comprehensive Survey']
 ## 🗂️ Repository Structure
 
 ```
-├── main.py                    # Query classifier + agent routing
-├── synthesis_engine.py        # Core synthesis + D1 + D2 defenses
-├── memory_manager.py          # papers.db + ChromaDB management
-├── inject_poison.py           # Attack testing: dual-database injection
-├── cleanup_poison.py          # Attack cleanup: remove poisoned records
-├── check_papers.py            # Verify corpus state post-injection
-├── papers.db                  # SQLite corpus (615 papers)
+RAGShield/
+├── src/                        # Core application
+│   ├── main.py                 # Query classifier + agent routing
+│   ├── app_ui.py               # Streamlit chat interface
+│   ├── memory_manager.py       # SQLite + ChromaDB + BM25 management
+│   ├── synthesis_engine.py     # Literature review engine (D1 + D2 here)
+│   ├── synthesis_tools.py      # Synthesis tool wrappers
+│   ├── tools.py                # LangChain tool definitions
+│   ├── bibtex_export.py        # BibTeX export logic
+│   ├── output_manager.py       # Output file management
+│   └── qa_layer.py             # Citation + quality validation
+│
+├── security/                   # Attack & defense testing infrastructure
+│   ├── inject_poison.py        # False information injection (5 papers)
+│   ├── inject_poison_d2.py     # Contradiction injection (1 paper)
+│   ├── cleanup_poison.py       # Remove poisoned records from corpus
+│   ├── retrieval_check.py      # Verify retrieval rank post-injection
+│   └── test_system.py          # End-to-end system test
+│
+├── scripts/                    # Development & debug utilities
+│   ├── diagnose.py
+│   ├── debug_inject.py
+│   ├── find_db.py
+│   ├── migration_script.py
+│   └── upgrade_embeddings.py
+│
+├── paper/
+│   └── CS_491_Final_Report.pdf # Full research paper
+│
 ├── requirements.txt
-└── README.md
+└── .gitignore
 ```
 
 ---
